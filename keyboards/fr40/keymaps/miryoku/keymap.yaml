@@ -1,0 +1,44 @@
+layout: {qmk_keyboard: fr40, qmk_layout: LAYOUT}
+layers:
+  L0:
+  - [TAB, Q, W, E, R, T, Y, U, I, O]
+  - - P
+    - BSPC
+    - ESC
+    - {t: A, h: LSFT}
+    - {t: S, h: LALT}
+    - {t: D, h: LGUI}
+    - {t: F, h: LCTL}
+    - G
+    - H
+    - {t: J, h: LCTL}
+  - - {t: K, h: LGUI}
+    - {t: L, h: LALT}
+    - {t: ENT, h: LSFT}
+    - ''
+    - Z
+    - X
+    - C
+    - V
+    - B
+    - N
+  - [M, ',', ., CW TOGG, CW TOGG, '', '', TL LOWR, SPC, TL UPPR]
+  - ['', Ctl+Alt+ H, '', Ctl+Alt+ L]
+  L1:
+  - ['`', '''', 'Sft+ ,', Sft+ 4, Sft+ ., Sft+ 1, Sft+ 2, '[', Sft+ -, ']']
+  - [;, '', Sft+ ', \, Sft+ 0, '-', Sft+ 9, Sft+ 3, Sft+ 5, 'Sft+ [']
+  - ['=', 'Sft+ ]', /, '', '', Sft+ ;, Sft+ 8, Sft+ =, '', '']
+  - [Sft+ 7, Sft+ 6, Sft+ `, Sft+ /, '', '', '', '', '', '']
+  - ['', '', '', '']
+  L2:
+  - [Meh+ SPC, '1', '2', '3', '4', '5', '6', '7', '8', '9']
+  - ['0', '', '', '4', '5', '6', '', '', '', '']
+  - ['', '', '', '', '7', '8', '9', '', '', '']
+  - ['', '', '', '', '', '', '0', '', '', '']
+  - ['', '', '', '']
+  L3:
+  - [Meh+ ;, BTN1, MS U, BTN2, F7, F8, F9, F10, F11, F12]
+  - [VOLD, VOLU, '', MS L, MS D, MS R, F1, F2, F3, F4]
+  - [F5, F6, Ctl+Alt+ /, '', Ctl+Gui+ Q, '', '', '', '', '']
+  - ['', '', '', 'Ctl+Alt+ ,', '', '', '', '', '', '']
+  - ['', '', '', '']

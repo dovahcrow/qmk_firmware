@@ -1,0 +1,76 @@
+
+
+layout: {qmk_keyboard: fr40, qmk_layout: LAYOUT}
+layers:
+  L0:
+  - [TAB, Q, W, E, R, T, Y, U, I, O]
+  - - P
+    - BSPC
+    - ESC
+    - {t: A, h: LSFT}
+    - {t: S, h: LALT}
+    - {t: D, h: LGUI}
+    - {t: F, h: LCTL}
+    - G
+    - H
+    - {t: J, h: RCTL}
+  - - {t: K, h: RGUI}
+    - {t: L, h: LALT}
+    - {t: ENT, h: RSFT}
+    - CW TOGG
+    - Z
+    - X
+    - C
+    - V
+    - B
+    - N
+  - [M, '', UP, '', '', L4, L5, TL LOWR, SPC, TL UPPR]
+  - ['', LEFT, DOWN, RIGHT]
+  L1:
+  - [Meh+ SPC, '''', 'Sft+ ,', Sft+ 4, Sft+ ., '', '', '[', Sft+ -, ']']
+  - [;, '', Sft+ ', \, Sft+ 0, Sft+ 2, Sft+ 9, Sft+ 3, Sft+ 5, 'Sft+ [']
+  - ['`', 'Sft+ ]', Sft+ \, '', '', Sft+ ;, Sft+ 1, Sft+ /, '', Sft+ 7]
+  - [Sft+ 6, Sft+ `, '', '', '', '', '', TL LOWR, '', TL UPPR]
+  - ['', Ctl+Alt+ H, '', Ctl+Alt+ L]
+  L2:
+  - [Meh+ SPC, '1', '2', '3', '4', '5', '6', '7', '8', '9']
+  - ['0', '', '', '4', '5', '6', '-', Sft+ 8, '', '=']
+  - [',', ., '', '', '7', '8', '9', Sft+ =, /, '']
+  - ['', '', '', '', '', '0', '0', TL LOWR, '', '']
+  - ['', '', '', '']
+  L3:
+  - [F1, F2, F3, F4, F5, F6, F7, F8, F9, F10]
+  - [F11, F12, SLEP, '', '', '', PSCR, '', '', VOLD]
+  - [VOLU, MUTE, Ctl+Alt+ /, '', Ctl+Gui+ Q, '', '', '', '', '']
+  - ['', '', '', 'Ctl+Alt+ ,', DB TOGG, '', '', '', '', '']
+  - ['', '', '', '']
+  L4:
+  - ['', '', '', '', '', '', '', '', '', '']
+  - ['', '', '', '', '', '', '', '', MS L, MS D]
+  - [MS U, MS R, '', '', '', '', '', '', '', MS WHLU]
+  - - MS WHLD
+    - ''
+    - ''
+    - ''
+    - ''
+    - {type: held}
+    - ''
+    - ''
+    - ''
+    - BTN1
+  - [BTN2, BTN3, '', '']
+  L5:
+  - ['', '', '', '', '', '', '', COPY, CUT, PSTE]
+  - [UNDO, '', '', '', '', '', '', CAPS, LEFT, DOWN]
+  - [UP, RGHT, '', '', '', '', '', '', '', HOME]
+  - - PGUP
+    - PGDN
+    - END
+    - ''
+    - ''
+    - ''
+    - {type: held}
+    - ''
+    - ''
+    - ''
+  - ['', '', '', '']

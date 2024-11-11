@@ -1,0 +1,103 @@
+layout: {qmk_keyboard: fr40, qmk_layout: LAYOUT}
+layers:
+  L0:
+  - [TAB, Q, W, E, R, T, Y, U, I, O]
+  - - P
+    - BSPC
+    - {t: ESC, h: LCTL}
+    - A
+    - S
+    - D
+    - F
+    - G
+    - H
+    - J
+  - - K
+    - L
+    - {t: ENT, h: LSFT}
+    - LSFT
+    - Z
+    - X
+    - C
+    - V
+    - B
+    - N
+  - - M
+    - RSFT
+    - UP
+    - L2
+    - LCTL
+    - LALT
+    - {t: LGUI, h: L1}
+    - L1
+    - SPC
+    - SPC
+  - ['', LEFT, DOWN, RIGHT]
+  L1:
+  - [Meh+ SPC, Ctl+Alt+ 1, Ctl+Alt+ 2, Ctl+Alt+ 3, Ctl+Alt+ 4, Ctl+Alt+ 5, Ctl+Alt+ 6, Ctl+Alt+ 7, Meh+ -, Meh+ =]
+  - [VOLD, VOLU, '', Gui+ A, Gui+ S, Gui+ W, Gui+ F, '', Ctl+Alt+ H, Ctl+Alt+ J]
+  - [Ctl+Alt+ K, Ctl+Alt+ L, Ctl+Alt+ /, LSFT, Gui+ Z, Gui+ X, Gui+ C, Gui+ V, Gui+ 3, Gui+ 4]
+  - - Gui+ 5
+    - Gui+ 6
+    - Meh+ UP
+    - Ctl+Alt+ ,
+    - Meh+ ;
+    - Ctl+Alt+Gui+ SPC
+    - {type: held}
+    - {t: ▽, type: trans}
+    - Gui+ SPC
+    - Gui+ 1
+  - [Gui+ 2, Meh+ LEFT, Meh+ DOWN, Meh+ RIGHT]
+  L2:
+  - ['', BTN1, MS U, BTN2, F7, F8, F9, F10, F11, F12]
+  - [VOLD, VOLU, '', MS L, MS D, MS R, F1, F2, F3, F4]
+  - [F5, F6, '', '', Ctl+Gui+ Q, '', '', '', '', '']
+  - - ''
+    - ''
+    - ''
+    - {type: held}
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+  - ['', '', '', '']
+combos:
+  - {p: [19, 20], k: ")", l: ["L0"]} # jk
+  - {p: [20, 21], k: "]", l: ["L0"]} # kl
+  # - {p: [20, 29], k: "]", l: ["L0"]} # kn
+
+  - {p: [15, 16], k: "(", l: ["L0"]} # df
+  - {p: [15, 14], k: "[", l: ["L0"]} # ds
+  
+  - {p: [14, 27], k: ",", l: ["L0"]} # fs
+  # - {p: [14, 15, 16], k: ",", l: ["L0"]} # dfs
+  - {p: [16, 2], k: ".", l: ["L0"]} # fw
+
+  - {p: [3, 16], k: ";", l: ["L0"]} # ef
+  - {p: [15, 27], k: "'", l: ["L0"]} # dv
+
+  - {p: [17, 5], k: "=", l: ["L0"]} # gt
+  - {p: [28, 17], k: "-", l: ["L0"]} # bg
+
+  - {p: [16, 27], k: "\\", l: ["L0"]} # fv
+  - {p: [4, 16], k: "/", l: ["L0"]} # rf
+
+  - {p: [0, 1], k: "`", l: ["L0"]} # tab q
+  - {p: [1, 2], k: "1", l: ["L0"]} # qw
+  - {p: [2, 3], k: "2", l: ["L0"]} # we
+  - {p: [3, 4], k: "3", l: ["L0"]} # er
+  - {p: [4, 5], k: "4", l: ["L0"]} # rt
+  - {p: [5, 6], k: "5", l: ["L0"]} # ty
+  - {p: [6, 7], k: "6", l: ["L0"]} # yu
+  - {p: [7, 8], k: "7", l: ["L0"]} # ui
+  - {p: [8, 9], k: "8", l: ["L0"]} # io
+  - {p: [9, 10], k: "9", l: ["L0"]} # op
+  - {p: [10, 11], k: "0", l: ["L0"]} # p del
+    # [0] = LAYOUT(
+    #     KC_TAB           , KC_Q, KC_W, KC_E 3, KC_R 4, KC_T 5, KC_Y, KC_U, KC_I, KC_O 9, KC_P 10, KC_BSPC 11,
+    #     LCTL_T(KC_ESC) 12, KC_A, KC_S, KC_D 15, KC_F 16, KC_G, KC_H, KC_J, KC_K 20, KC_L, LSFT_T(KC_ENT), 
+    #     KC_LSFT          , KC_Z, KC_X 25, KC_C, KC_V 27, KC_B, KC_N, KC_M 30, KC_RSFT, KC_UP, MO(2) ,
+    #     KC_LCTL       , KC_LALT, LT(1, KC_LGUI), MO(1), KC_SPC, LT(3, KC_SPC), KC_NO, KC_LEFT, KC_DOWN, KC_RIGHT
+    # ),

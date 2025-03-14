@@ -1,0 +1,3 @@
+MCU = STM32F103
+BOOTLOADER = stm32duino
+

@@ -16,7 +16,7 @@
     "matrix_pins": {
         "cols": ["GP17", "GP1", "GP2", "GP3", "GP4", "GP5", "GP6", "GP7", "GP8", "GP9", "GP10", "GP0"],
         "rows": ["GP28", "GP29", "GP26", "GP27"]
-      },
+    },
     "processor": "RP2040",
     "usb": {
         "vid": "0xFEED",

@@ -5,7 +5,8 @@ COMBO_ENABLE = yes
 # RGB_MATRIX_DRIVER = ws2812
 TRI_LAYER_ENABLE = yes
 CAPS_WORD_ENABLE = yes
-CONSOLE_ENABLE = yes
+# CONSOLE_ENABLE = yes
 
 # SRC += features/achordion.c
- 
+
+# SERIAL_DRIVER = vendor 

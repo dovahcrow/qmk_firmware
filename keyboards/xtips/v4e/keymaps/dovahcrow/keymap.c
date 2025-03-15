@@ -3,6 +3,8 @@
 
 #include QMK_KEYBOARD_H
 
+#define NDEF KC_NO
+
 #define MOD_A MT(MOD_LGUI, KC_A)
 #define MOD_S MT(MOD_LALT, KC_S)
 #define MOD_D MT(MOD_LCTL, KC_D)
@@ -15,7 +17,7 @@
 
 #define L_MED(KC) LT(1, KC)
 #define L_NAV(KC) LT(2, KC)
-#define L_MOUSE(KC) LT(3, KC)
+#define L_MSE(KC) LT(3, KC)
 #define L_NUM(KC) LT(4, KC)
 #define L_SYM(KC) LT(5, KC)
 #define L_FN(KC) LT(6, KC)
@@ -37,15 +39,15 @@
 
 #define MAC_SLP C(G(KC_Q))
 
-#define G1 G(KC_1)
-#define G2 G(KC_2)
-#define G3 G(KC_3)
-#define G4 G(KC_4)
-#define G5 G(KC_5)
-#define G6 G(KC_6)
-#define G7 G(KC_7)
-#define G8 G(KC_8)
-#define G9 G(KC_9)
+#define KC_G1 G(KC_1)
+#define KC_G2 G(KC_2)
+#define KC_G3 G(KC_3)
+#define KC_G4 G(KC_4)
+#define KC_G5 G(KC_5)
+#define KC_G6 G(KC_6)
+#define KC_G7 G(KC_7)
+#define KC_G8 G(KC_8)
+#define KC_G9 G(KC_9)
 
 enum macro_keycodes {
     SNPST_VID = SAFE_RANGE,
@@ -119,52 +121,52 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // QWERTY
     [0] = LAYOUT(
-        KC_TAB , KC_Q , KC_W   , KC_E         , KC_R         , KC_T, KC_Y         , KC_U  , KC_I   , KC_O   , KC_P    , KC_BSPC,
-        KC_ESC , MOD_A, MOD_S  , MOD_D        , MOD_F        , KC_G, KC_H         , MOD_J , MOD_K  , MOD_L  , MOD_QUOT, 
-        KC_LSFT, KC_Z , KC_X   , KC_C         , KC_V         , KC_B, KC_N         , KC_M  , KC_COMM, KC_DOT , KC_SLSH ,
-        KC_NO  , KC_NO, KC_BSPC, L_NAV(KC_SPC), L_SYM(KC_SPC),       L_NUM(KC_ENT), KC_DEL, KC_LEFT, KC_DOWN, KC_RIGHT
+        KC_TAB, KC_Q , KC_W , KC_E          , KC_R         , KC_T         , NDEF , NDEF , KC_Y         , KC_U         , KC_I         , KC_O  , KC_P    , KC_BSPC,
+        KC_ESC, MOD_A, MOD_S, MOD_D         , MOD_F        , KC_G         , KC_NO, KC_NO, KC_H         , MOD_J        , MOD_K        , MOD_L , MOD_QUOT, KC_NO  ,
+        KC_NO , KC_Z , KC_X , KC_C          , KC_V         , KC_B         , KC_NO, KC_NO, KC_N         , KC_M         , KC_COMM      , KC_DOT, KC_SLSH , KC_NO  ,
+        NDEF  , NDEF , NDEF , L_MED(KC_BSPC), L_NAV(KC_SPC), L_MSE(KC_SPC), NDEF , NDEF , L_SYM(KC_ENT), L_NUM(KC_DEL), L_FN(KC_LEFT), NDEF  , NDEF    , NDEF
     ),
     // MEDIA
     [1] = LAYOUT(
-        MEH(KC_SPC) , LCA(KC_1)   , LCA(KC_2) , LCA(KC_3) , LCA(KC_4)   , LCA(KC_5) , LCA(KC_6) , LCA(KC_7)   , MEH(KC_MINS), MEH(KC_EQL)  , KC_VOLD     , KC_VOLU,
-        KC_NO       , LGUI(KC_A)  , LGUI(KC_S), LGUI(KC_W), LGUI(KC_F)  , KC_NO     , LCA(KC_H) , LCA(KC_J)   , LCA(KC_K)   , LCA(KC_L)    , LCA(KC_SLSH),
-        KC_LSFT     , LGUI(KC_Z)  , LGUI(KC_X), LGUI(KC_C), LGUI(KC_V)  , LGUI(KC_3), LGUI(KC_4), LGUI(KC_5)  , LGUI(KC_6)  , MEH(KC_UP)   , LCA(KC_COMM),
-        MEH(KC_SCLN), LCAG(KC_SPC), KC_NO   , KC_NO   , LGUI(KC_SPC), LGUI(KC_1), LGUI(KC_2), MEH(KC_LEFT), MEH(KC_DOWN), MEH(KC_RIGHT)
+        MEH(KC_SPC), LCA(KC_1) , LCA(KC_2) , LCA(KC_3) , LCA(KC_4) , LCA(KC_5)   , NDEF , NDEF , LCA(KC_6) , LCA(KC_7) , MEH(KC_MINS), MEH(KC_EQL), KC_VOLD     , KC_VOLU,
+        KC_NO      , LGUI(KC_A), LGUI(KC_S), LGUI(KC_W), LGUI(KC_F), KC_NO       , KC_NO, KC_NO, LCA(KC_H) , LCA(KC_J) , LCA(KC_K)   , LCA(KC_L)  , LCA(KC_SLSH), KC_NO,
+        KC_NO      , LGUI(KC_Z), LGUI(KC_X), LGUI(KC_C), LGUI(KC_V), LGUI(KC_3)  , KC_NO, KC_NO, LGUI(KC_4), LGUI(KC_5), LGUI(KC_6)  , MEH(KC_UP) , LCA(KC_COMM), KC_NO,
+        NDEF       , NDEF      , NDEF      , KC_NO     , KC_NO     , LGUI(KC_SPC), NDEF , NDEF , LGUI(KC_1), LGUI(KC_2), MEH(KC_LEFT), NDEF       , NDEF        , NDEF
     ),
     // NAV
     [2] = LAYOUT(
-        SPAD , AR_1 , AR_2 , AR_3 , AR_4 ,  AR_5  , AR_6      , AR_LW    , AR_RW  , KC_NO  , KC_NO, KC_NO,
-        KC_NO, TMUX1, TMUX2, TMUX3, TMUX4, TMUX5  , KC_LEFT   , KC_DOWN  , KC_UP  , KC_RGHT, TMUXS,
-        KC_NO, G1   , G2   , G3   , G4   , KC_HOME, KC_PGDN   , KC_PGUP  , KC_END , TMUXC  , KC_NO,
-        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,          A(KC_MINS), A(KC_EQL), KC_NO  , KC_NO  , KC_NO
+        SPAD , AR_1 , AR_2 , AR_3 , AR_4 , AR_5   , AR_6   , NDEF , NDEF      , AR_LW    , AR_RW , KC_NO  , KC_NO, KC_NO,
+        KC_NO, TMUX1, TMUX2, TMUX3, TMUX4, TMUX5  , KC_LEFT, KC_NO, KC_NO     , KC_DOWN  , KC_UP , KC_RGHT, TMUXS, KC_NO,
+        KC_NO, KC_G1, KC_G2, KC_G3, KC_G4, KC_HOME, KC_PGDN, KC_NO, KC_NO     , KC_PGUP  , KC_END, TMUXC  , KC_NO, KC_NO,
+        NDEF , NDEF , NDEF , KC_NO, KC_NO, KC_NO  , NDEF   , NDEF , A(KC_MINS), A(KC_EQL), KC_NO , NDEF   , NDEF , NDEF
     ),
     // MOUSE
     [3] = LAYOUT(
-        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO
+        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, NDEF , NDEF , KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+        NDEF , NDEF , NDEF , KC_NO, KC_NO, KC_NO, NDEF , NDEF , KC_NO, KC_NO, KC_NO, NDEF , NDEF , NDEF
     ),
     // NUM
     [4] = LAYOUT(
-        KC_NO, KC_LBRC, KC_1 , KC_2   , KC_3 , KC_RBRC, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-        KC_NO, KC_SCLN, KC_4 , KC_5   , KC_6 , KC_EQL , KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-        KC_NO, KC_GRV , KC_7 , KC_8   , KC_9 , KC_BSLS, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-        KC_NO, KC_NO  , KC_0, KC_MINS, KC_NO,          KC_NO, KC_NO, KC_NO, KC_NO, KC_NO
+        KC_NO, KC_LBRC, KC_1, KC_2, KC_3   , KC_RBRC, NDEF , NDEF , KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+        KC_NO, KC_SCLN, KC_4, KC_5, KC_6   , KC_EQL , KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+        KC_NO, KC_GRV , KC_7, KC_8, KC_9   , KC_BSLS, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+        NDEF , NDEF   , NDEF, KC_0, KC_MINS, KC_NO  , NDEF , NDEF , KC_NO, KC_NO, KC_NO, NDEF , NDEF , NDEF
     ),
     // SYM
     [5] = LAYOUT(
-        KC_NO, KC_LCBR, KC_EXLM, KC_AT  , KC_HASH, KC_RCBR, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-        KC_NO, KC_COLN, KC_DLR , KC_PERC, KC_CIRC, KC_PLUS, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-        KC_NO, KC_TILD, KC_AMPR, KC_ASTR, KC_LPRN, KC_PIPE, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-        KC_NO, KC_NO  , KC_RPRN, KC_UNDS, KC_NO  ,          KC_NO, KC_NO, KC_NO, KC_NO, KC_NO
+        KC_NO, KC_LCBR, KC_EXLM, KC_AT  , KC_HASH, KC_RCBR, NDEF , NDEF , KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+        KC_NO, KC_COLN, KC_DLR , KC_PERC, KC_CIRC, KC_PLUS, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+        KC_NO, KC_TILD, KC_AMPR, KC_ASTR, KC_LPRN, KC_PIPE, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+        NDEF , NDEF   , NDEF   , KC_RPRN, KC_UNDS, KC_NO  , NDEF , NDEF , KC_NO, KC_NO, KC_NO, NDEF , NDEF , NDEF
     ),
     // FN
     [6] = LAYOUT(
-        KC_NO, KC_1 , KC_2 , KC_3 , KC_4 , KC_5 , KC_6 , KC_7 , KC_8 , KC_9 , KC_0 , KC_NO,
-        KC_NO, KC_4 , KC_5 , KC_6 , KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-        KC_NO, KC_7 , KC_8 , KC_9 , KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO
+        KC_NO, KC_1, KC_2, KC_3 , KC_4 , KC_5 , NDEF , NDEF , KC_6 , KC_7 , KC_8 , KC_9 , KC_0 , KC_NO,
+        KC_NO, KC_4, KC_5, KC_6 , KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+        KC_NO, KC_7, KC_8, KC_9 , KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+        NDEF , NDEF, NDEF, KC_NO, KC_NO, KC_NO, NDEF , NDEF , KC_NO, KC_NO, KC_NO, NDEF , NDEF , NDEF
     ),
 };
 

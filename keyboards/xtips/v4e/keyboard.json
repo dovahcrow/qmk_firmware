@@ -90,10 +90,10 @@
     "features": {
         "bootmagic": true,
         "command": false,
-        "console": false,
+        "console": true,
         "mousekey": true,
         "extrakey": true,
-        "rgblight": true,
+        "rgblight": false,
         "nkro": true
     },
     "split": {

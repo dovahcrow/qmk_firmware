@@ -20,3 +20,10 @@
 
 // #define DYNAMIC_TAPPING_TERM_ENABLE
 
+#define RGBLED_NUM 2 
+
+#define HAL_USE_PAL TRUE
+// #define USE_SERIAL
+// #define SOFT_SERIAL_PIN B6
+
+
